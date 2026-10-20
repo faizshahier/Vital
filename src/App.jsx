@@ -6,6 +6,7 @@ import About from "./Pages/About";
 import Services from "./Pages/Services";
 import Doctors from "./Pages/Doctors";
 import Blog from "./Pages/Blog";
+import NotFound from "./Pages/NotFound";
 import { navLinks, footerLinks, contact } from "./data";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer contact={contact} columns={footerLinks} />
     </BrowserRouter>

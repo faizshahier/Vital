@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { LuPlus } from "react-icons/lu";
+import { fadeUp, lift } from "../motion";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import heroImage from "../assets/hero.png";
@@ -7,14 +10,13 @@ const Home = () => {
   return (
     <>
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-center">
+      <motion.section {...fadeUp} className="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <p className="text-sm"><span className="text-yellow-400 text-lg">★★★★★</span> 5.0 (150 Reviews)</p>
           <h1 className="text-5xl md:text-6xl font-medium my-6">Partner in health and wellness</h1>
           <p className="text-gray-600 max-w-md">Providing advanced healthcare solutions with a compassionate touch for every patient.</p>
-          <div className="flex items-center gap-6 mt-8">
+          <div className="mt-8">
             <Button text="Book a call" />
-            <a href="#" className="text-sm font-medium">Watch Video</a>
           </div>
           <div className="flex items-center gap-3 mt-10">
             <div className="flex -space-x-3">
@@ -28,11 +30,18 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <img src={heroImage} alt="Doctor wearing a mask" className="w-full h-[480px] object-cover rounded-3xl" />
-      </section>
+        <motion.img
+          src={heroImage}
+          alt="Doctor wearing a mask"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="w-full h-[480px] object-cover rounded-3xl"
+        />
+      </motion.section>
 
       {/* Virtual consultation */}
-      <section className="max-w-6xl mx-auto px-4">
+      <motion.section {...fadeUp} className="max-w-6xl mx-auto px-4">
         <div className="bg-blue-50/60 rounded-3xl p-8">
           <div className="flex flex-wrap items-center gap-4">
             <h2 className="text-2xl font-medium">Virtual Consultation</h2>
@@ -49,10 +58,10 @@ const Home = () => {
             <span className="text-4xl font-medium">200K+</span> <span className="text-sm text-gray-600">Cured satisfied patients around the globe</span>
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why choose us */}
-      <section className="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
+      <motion.section {...fadeUp} className="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <p className="text-sm mb-3"><span className="text-blue-500">●</span> Why us</p>
           <h2 className="text-4xl md:text-5xl font-medium mb-10">Why choose VitalFlow for your healthcare?</h2>
@@ -69,21 +78,21 @@ const Home = () => {
           <Button text="Get Started" />
         </div>
         <img src={aboutImages[0]} alt="" className="w-full h-96 object-cover rounded-3xl" />
-      </section>
+      </motion.section>
 
       {/* Services */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
+      <motion.section {...fadeUp} className="max-w-6xl mx-auto px-4 py-16">
         <p className="text-sm text-center mb-3"><span className="text-blue-500">●</span> Services</p>
         <h2 className="text-4xl md:text-5xl font-medium text-center max-w-2xl mx-auto mb-12">Personalized solutions for better oral health</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((item) => (
-            <Card key={item.title} type="service" title={item.title} text={item.text} />
+            <Card key={item.title} type="service" title={item.title} text={item.text} Icon={item.icon} />
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Vision */}
-      <section className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center">
+      <motion.section {...fadeUp} className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center">
         <img src={blogs[3].image} alt="" className="w-full h-96 object-cover rounded-3xl" />
         <div>
           <p className="text-sm mb-3"><span className="text-blue-500">●</span> About us</p>
@@ -100,24 +109,25 @@ const Home = () => {
           </div>
           <Button text="What we do" />
         </div>
-      </section>
+      </motion.section>
 
       {/* Features */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
+      <motion.section {...fadeUp} className="max-w-6xl mx-auto px-4 py-16">
         <p className="text-sm text-center mb-3"><span className="text-blue-500">●</span> Features</p>
         <h2 className="text-4xl md:text-5xl font-medium text-center max-w-2xl mx-auto mb-12">Innovative solutions to enhance medical service</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-gray-200">
           {features.map((item) => (
-            <div key={item.title} className="text-center p-10 border-r border-b border-gray-200">
-              <h3 className="font-medium mb-2">{item.title}</h3>
+            <motion.div key={item.title} {...lift} className="text-center p-10 border-r border-b border-gray-200">
+              <item.icon className="mx-auto text-3xl text-blue-500" />
+              <h3 className="font-medium mt-4 mb-2">{item.title}</h3>
               <p className="text-sm text-gray-600">{item.text}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Steps */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
+      <motion.section {...fadeUp} className="max-w-6xl mx-auto px-4 py-16">
         <p className="text-sm text-center mb-3"><span className="text-blue-500">●</span> How it works</p>
         <h2 className="text-4xl md:text-5xl font-medium text-center max-w-2xl mx-auto mb-12">Step-by-step process for seamless user experience</h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -130,10 +140,10 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials */}
-      <section className="max-w-6xl mx-auto px-4 py-20">
+      <motion.section {...fadeUp} className="max-w-6xl mx-auto px-4 py-20">
         <p className="text-sm text-center mb-3"><span className="text-blue-500">●</span> Testimonials</p>
         <h2 className="text-4xl md:text-5xl font-medium text-center max-w-2xl mx-auto mb-12">What our satisfied and happy clients have to say</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -141,10 +151,10 @@ const Home = () => {
             <Card key={item.name} type="testimonial" title={item.name} text={item.text} avatar={item.avatar} stars={item.stars} />
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Blog */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
+      <motion.section {...fadeUp} className="max-w-6xl mx-auto px-4 py-16">
         <p className="text-sm text-center mb-3"><span className="text-blue-500">●</span> Blog</p>
         <h2 className="text-4xl md:text-5xl font-medium text-center max-w-2xl mx-auto mb-12">Insights and tips for better healthcare decisions</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -152,22 +162,22 @@ const Home = () => {
             <Card key={item.title} type="blog" title={item.title} date={item.date} image={item.image} />
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* FAQ - the <details> tag opens and closes without React state */}
-      <section className="max-w-3xl mx-auto px-4 py-16">
+      <motion.section {...fadeUp} className="max-w-3xl mx-auto px-4 py-16">
         <p className="text-sm text-center mb-3"><span className="text-blue-500">●</span> FAQs</p>
         <h2 className="text-4xl md:text-5xl font-medium text-center max-w-2xl mx-auto mb-12">Frequently asked questions for quick answers</h2>
         {faqs.map((faq) => (
           <details key={faq.question} className="group border-b border-gray-200 py-5">
             <summary className="flex justify-between items-center cursor-pointer list-none font-medium">
               {faq.question}
-              <span className="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center group-open:rotate-45 transition">+</span>
+              <span className="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center group-open:rotate-45 transition"><LuPlus /></span>
             </summary>
             <p className="text-gray-600 mt-3">{faq.answer}</p>
           </details>
         ))}
-      </section>
+      </motion.section>
     </>
   );
 };

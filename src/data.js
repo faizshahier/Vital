@@ -1,4 +1,9 @@
 // All website content lives here. Components get it through props.
+import {
+  LuBaby, LuBone, LuStethoscope, LuBrain, LuHeartPulse, LuHandHeart,
+  LuHeartHandshake, LuAward, LuShieldCheck,
+  LuCalendarDays, LuClipboardList, LuMessageCirclePlus, LuMicroscope, LuFolderOpen, LuNetwork,
+} from "react-icons/lu";
 
 const img = (id) => `https://images.unsplash.com/${id}?w=600&q=80&auto=format&fit=crop`;
 
@@ -10,12 +15,12 @@ export const navLinks = [
 ];
 
 export const services = [
-  { title: "Pediatrics", text: "Monitor your child's growth and development closely to ensure their health at every stage." },
-  { title: "Orthopedics", text: "Receive care for bone and muscle health with advanced treatments tailored to your needs." },
-  { title: "Gastroenterology", text: "Comprehensive care for digestive health to address issues with precision and personalized attention." },
-  { title: "Neurology", text: "Specialized treatments for brain and nerve health, ensuring advanced and compassionate care always." },
-  { title: "Cardiology", text: "State-of-the-art heart care focused on your cardiovascular health with expertise and dedication." },
-  { title: "General care", text: "Reliable primary healthcare services designed to maintain your well-being at every stage of life." },
+  { icon: LuBaby, title: "Pediatrics", text: "Monitor your child's growth and development closely to ensure their health at every stage." },
+  { icon: LuBone, title: "Orthopedics", text: "Receive care for bone and muscle health with advanced treatments tailored to your needs." },
+  { icon: LuStethoscope, title: "Gastroenterology", text: "Comprehensive care for digestive health to address issues with precision and personalized attention." },
+  { icon: LuBrain, title: "Neurology", text: "Specialized treatments for brain and nerve health, ensuring advanced and compassionate care always." },
+  { icon: LuHeartPulse, title: "Cardiology", text: "State-of-the-art heart care focused on your cardiovascular health with expertise and dedication." },
+  { icon: LuHandHeart, title: "General care", text: "Reliable primary healthcare services designed to maintain your well-being at every stage of life." },
 ];
 
 export const doctors = [
@@ -71,18 +76,18 @@ export const vision = [
 ];
 
 export const values = [
-  { title: "Compassion", text: "We prioritize empathy and understanding, ensuring every patient feels valued, respected, and cared for in their healthcare journey." },
-  { title: "Excellence", text: "We are committed to delivering the highest standards of quality in every aspect of our services, striving for continuous improvement." },
-  { title: "Integrity", text: "We uphold honesty and transparency in all interactions, building trust with patients, families, and the community through ethical practices." },
+  { icon: LuHeartHandshake, title: "Compassion", text: "We prioritize empathy and understanding, ensuring every patient feels valued, respected, and cared for in their healthcare journey." },
+  { icon: LuAward, title: "Excellence", text: "We are committed to delivering the highest standards of quality in every aspect of our services, striving for continuous improvement." },
+  { icon: LuShieldCheck, title: "Integrity", text: "We uphold honesty and transparency in all interactions, building trust with patients, families, and the community through ethical practices." },
 ];
 
 export const features = [
-  { title: "Easy appointment", text: "Schedule your appointments quickly with our simple and efficient booking system." },
-  { title: "Personalized plans", text: "Receive tailored care plans designed to meet your unique health needs and goals." },
-  { title: "24/7 consultations", text: "Access expert medical advice anytime through secure and reliable virtual consultations." },
-  { title: "Medical technology", text: "Experience modern healthcare with innovative tools and state-of-the-art equipment." },
-  { title: "Patient records", text: "Stay organized with secure, easy access to your medical records whenever needed." },
-  { title: "Care network", text: "Connect with top specialists and facilities to ensure complete healthcare coverage." },
+  { icon: LuCalendarDays, title: "Easy appointment", text: "Schedule your appointments quickly with our simple and efficient booking system." },
+  { icon: LuClipboardList, title: "Personalized plans", text: "Receive tailored care plans designed to meet your unique health needs and goals." },
+  { icon: LuMessageCirclePlus, title: "24/7 consultations", text: "Access expert medical advice anytime through secure and reliable virtual consultations." },
+  { icon: LuMicroscope, title: "Medical technology", text: "Experience modern healthcare with innovative tools and state-of-the-art equipment." },
+  { icon: LuFolderOpen, title: "Patient records", text: "Stay organized with secure, easy access to your medical records whenever needed." },
+  { icon: LuNetwork, title: "Care network", text: "Connect with top specialists and facilities to ensure complete healthcare coverage." },
 ];
 
 export const steps = [
@@ -100,10 +105,42 @@ export const faqs = [
 ];
 
 export const footerLinks = [
-  { title: "Static pages", links: ["Home", "About", "Contact", "404"] },
-  { title: "CMS Pages", links: ["Services", "Doctors", "Careers", "Blogs"] },
-  { title: "Detail pages", links: ["Service (CMS)", "Doctor (CMS)", "Career (CMS)", "Blogs (CMS)"] },
-  { title: "Follow us", links: ["Linkedin", "Facebook", "Twitter", "Youtube"] },
+  {
+    title: "Static pages",
+    links: [
+      { name: "Home", path: "/" },
+      { name: "About", path: "/about" },
+      { name: "Contact", path: "#" },
+      { name: "404", path: "/404" },
+    ],
+  },
+  {
+    title: "CMS Pages",
+    links: [
+      { name: "Services", path: "/services" },
+      { name: "Doctors", path: "/doctors" },
+      { name: "Careers", path: "#" },
+      { name: "Blogs", path: "/blog" },
+    ],
+  },
+  {
+    title: "Detail pages",
+    links: [
+      { name: "Service (CMS)", path: "#" },
+      { name: "Doctor (CMS)", path: "#" },
+      { name: "Career (CMS)", path: "#" },
+      { name: "Blogs (CMS)", path: "#" },
+    ],
+  },
+  {
+    title: "Follow us",
+    links: [
+      { name: "Linkedin", path: "#" },
+      { name: "Facebook", path: "#" },
+      { name: "Twitter", path: "#" },
+      { name: "Youtube", path: "#" },
+    ],
+  },
 ];
 
 export const contact = {
